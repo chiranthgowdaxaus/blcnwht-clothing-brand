@@ -1,0 +1,161 @@
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    color: #333;
+}
+
+.container, .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+/* Header styling */
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    font-weight: 500;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+}
+
+.navbar-nav .nav-link {
+    padding: 0 15px;
+    font-size: 1rem;
+    color: #333;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Modern Search Bar Design */
+.search-container {
+    position: relative;
+    width: 200px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #f1f1f1;
+    padding-left: 10px;
+    height: 40px;
+    transition: all 0.3s ease;
+    
+}
+
+.search-input {
+    width: 0;
+    padding-left: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: width 0.3s ease;
+}
+
+.search-form:hover .search-input,
+.search-form:focus-within .search-input {
+    width: 140px; /* Expand on focus or hover */
+}
+
+.search-form button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    margin-left: 5px;
+}
+
+.search-form button:hover {
+    color: #007bff;
+}
+
+/* Account and Cart Icons */
+.nav-link i {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-link i:hover {
+    color: #007bff;
+}
+
+/* Buttons */
+.btn-black-white {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-black-white:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Form styling */
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px; /* Increase margin to add more space below the form */
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .container, .container-fluid {
+        padding: 15px;
+    }
+}

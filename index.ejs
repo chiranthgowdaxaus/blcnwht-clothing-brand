@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blcnwht Clothing Brand</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Carousel Styles */
+        .carousel-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 66vh;
+        }
+
+        /* Category Section */
+        .category-section {
+            padding: 50px 0;
+            margin-bottom: 80px;
+        }
+
+        .category-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card img {
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .category-caption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Shop by Category - Add more space before Featured Products */
+        .category-section {
+            padding: 50px 0;
+            margin-bottom: 80px; /* Add more space between categories and featured section */
+        }
+
+        /* Featured Products Section - Full Width */
+        .featured-section {
+            width: 100%; /* Make it stretch full width */
+            background-color: #f6f6f6;
+            padding: 50px 0 50px 0; /* Space above and below the section */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align the section */
+            animation: fadeInUp 1s ease-in-out; /* Animation for smooth appearance */
+        }
+
+        /* Featured Products Animation */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Center the Featured Products title */
+        .featured-section h2 {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.6s ease-in-out;
+        }
+
+        /* Featured Products Grid */
+        .featured-products-container {
+            display: flex;
+            justify-content: space-around; /* Distribute products with space between them */
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px; /* Set a maximum width */
+        }
+
+        /* Individual Product Cards */
+        .product-card {
+            width: 400px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 0px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-in-out;
+        }
+
+        /* Hover effect for product card */
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Align Product Info */
+        .product-info {
+            display: flex;
+            justify-content: space-between; /* Align price on the left and button on the right */
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        /* Product Name */
+        .product-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Product Price */
+        .product-price {
+            color: green;
+            font-size: 1.2rem;
+            margin-right: auto; /* Push price to the left */
+        }
+
+        /* Buy Now Button */
+        .btn-buy {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 15px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-buy:hover {
+            background-color: #0056b3;
+            transform: scale(1.05); /* Slight zoom on hover */
+            color: white;
+        }
+
+        /* Ensure the Featured Products go edge-to-edge */
+        .featured-section {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <!-- Hero Section with Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/images/slide1.png" class="d-block w-100" alt="First Slide">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/slide2.1.png" class="d-block w-100" alt="Second Slide">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/slide3.1.png" class="d-block w-100" alt="Third Slide">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/slide4.png" class="d-block w-100" alt="Fourth Slide">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Dynamic Text Below the Carousel -->
+    <div id="carousel-text"></div>
+
+    <!-- Category Section -->
+    <div class="container-fluid category-section">
+        <h2 class="text-center mb-4">Shop by Category</h2>
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="/images/mencat1.png" alt="Men's Clothing">
+                    <div class="category-caption">Men</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="/images/womencat1.png" alt="Women's Clothing">
+                    <div class="category-caption">Women</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="/images/accessoriescat1.png" alt="Accessories">
+                    <div class="category-caption">Accessories</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="featured-section">
+        <h2>Featured Products</h2>
+        <div class="featured-products-container">
+            <!-- First Product -->
+            <div class="product-card">
+                <img src="/images/product11.png" alt="Product 1">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">blcnwht Signature Jacket</div>
+                        <div class="product-price">$129.99</div>
+                    </div>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+    
+            <!-- Second Product -->
+            <div class="product-card">
+                <img src="/images/product12.png" alt="Product 2">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">blcnwht Essential Tee</div>
+                        <div class="product-price">$59.99</div>
+                    </div>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+    
+            <!-- Third Product -->
+            <div class="product-card">
+                <img src="/images/product13.png" alt="Product 3">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">blcnwht Classic Jeans</div>
+                        <div class="product-price">$89.99</div>
+                    </div>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="/images/5.png" alt="Product 4">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">blcnwht Signature Jacket</div>
+                        <div class="product-price">$129.99</div>
+                    </div>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="/images/6.png" alt="Product 5">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">blcnwht Signature Jacket</div>
+                        <div class="product-price">$129.99</div>
+                    </div>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="/images/7.png" alt="Product 6">
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">blcnwht Signature Jacket</div>
+                        <div class="product-price">$129.99</div>
+                    </div>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const carouselContents = [
+            `<div class="text-center my-5">
+                <h6 class="text-uppercase">Fashion Essentials</h6>
+                <h1 class="display-3" style="font-weight: 900;">STYLE REDEFINED</h1>
+                <p class="lead">Our curated collection never misses a trend. <br>Explore the timeless pieces that define modern fashion, featuring the blcnwht Signature Jacket, Iconic High-Rise Jeans, and Essential White Tee.</p>
+                <a href="#" class="btn btn-black-white rounded-pill px-4 py-2 mt-3">Shop The Collection</a>
+            </div>`,
+            `<div class="text-center my-5">
+                <h6 class="text-uppercase">Seasonal Must-Haves</h6>
+                <h1 class="display-3" style="font-weight: 900;">WINTER WARMTH</h1>
+                <p class="lead">Stay cozy and stylish with our latest winter collection. <br>Don't miss out on the blcnwht Puffer Coat, Warm Knit Sweaters, and Classic Wool Scarves.</p>
+                <a href="#" class="btn btn-black-white rounded-pill px-4 py-2 mt-3">Shop Winter Collection</a>
+            </div>`,
+            `<div class="text-center my-5">
+                <h6 class="text-uppercase">Sustainability</h6>
+                <h1 class="display-3" style="font-weight: 900;">ECO-FRIENDLY FASHION</h1>
+                <p class="lead">Join the movement towards a greener future. <br>Our eco-friendly line features the blcnwht Organic Cotton Tees, Recycled Denim Jeans, and Sustainable Sneaker Collection.</p>
+                <a href="#" class="btn btn-black-white rounded-pill px-4 py-2 mt-3">Shop Sustainable</a>
+            </div>`,
+            `<div class="text-center my-5">
+                <h6 class="text-uppercase">Exclusive Offers</h6>
+                <h1 class="display-3" style="font-weight: 900;">LIMITED-TIME DEALS</h1>
+                <p class="lead">Don't miss out on our exclusive offers. <br>Enjoy special discounts on the blcnwht Capsule Collection, including best-selling Hoodies, Joggers, and Streetwear Essentials.</p>
+                <a href="#" class="btn btn-black-white rounded-pill px-4 py-2 mt-3">Shop Deals</a>
+            </div>`
+        ];
+
+        // JavaScript code for dynamic carousel text
+        const carouselElement = document.querySelector('#heroCarousel');
+        const carouselTextElement = document.querySelector('#carousel-text');
+        carouselElement.addEventListener('slid.bs.carousel', function (event) {
+            const activeIndex = event.to;
+            carouselTextElement.innerHTML = carouselContents[activeIndex];
+        });
+        carouselTextElement.innerHTML = carouselContents[0]; // Set initial text
+    </script>
+</body>
+</html>

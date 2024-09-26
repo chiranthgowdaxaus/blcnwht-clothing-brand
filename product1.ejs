@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product 1 - blcnwht Clothing Brand</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Product Page Specific Styles */
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-title {
+            font-weight: bold;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: green;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .size-selection button {
+            margin-right: 10px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .size-selection button:hover {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .add-to-cart-btn {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .favorite-btn {
+            background-color: transparent;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            color: black;
+        }
+
+        .favorite-btn i {
+            margin-left: 5px;
+        }
+
+        .product-description {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <!-- Product Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Product Images -->
+            <div class="col-md-6">
+                <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/images/product1.png" class="d-block w-100" alt="blcnwht Signature Jacket Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/product1.1.png" class="d-block w-100" alt="blcnwht Signature Jacket Image 2">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+                <!-- Thumbnail Carousel -->
+                <div class="row mt-3 thumbnail-carousel">
+                    <div class="col-2">
+                        <img src="/images/product1.png" alt="Thumbnail 1">
+                    </div>
+                    <div class="col-2">
+                        <img src="/images/product1.1.png" alt="Thumbnail 2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-md-6">
+                <h1 class="product-title">blcnwht Signature Jacket</h1>
+                <p class="product-price">$129.99</p>
+
+                <!-- Size Selection -->
+                <div class="size-selection mb-3">
+                    <p>Select Size:</p>
+                    <button type="button" class="btn">S</button>
+                    <button type="button" class="btn">M</button>
+                    <button type="button" class="btn">L</button>
+                    <button type="button" class="btn">XL</button>
+                    <button type="button" class="btn">XXL</button>
+                </div>
+
+                <!-- Add to Bag and Favorite Buttons -->
+                <button class="add-to-cart-btn">Add to Bag</button>
+                <button class="favorite-btn mt-3">Favourite <i class="far fa-heart"></i></button>
+
+                <!-- Product Description -->
+                <div class="product-description mt-4">
+                    <h2>Description</h2>
+                    <p>
+                        Discover the ultimate in comfort and style with the blcnwht Signature Jacket. Made from 100% organic cotton, this jacket is perfect for any occasion.
+                    </p>
+                    <ul>
+                        <li>Material: 100% Organic Cotton</li>
+                        <li>Available Colors: Black, White</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
